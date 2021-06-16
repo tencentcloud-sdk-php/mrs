@@ -18,35 +18,23 @@ namespace TencentCloud\Mrs\V20200910\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 结论
+ * 手术记录
  *
- * @method array getSymptom() 获取症状
+ * @method SurgeryHistory getSurgeryHistory() 获取手术史
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setSymptom(array $Symptom) 设置症状
-注意：此字段可能返回 null，表示取不到有效值。
- * @method string getText() 获取文本
-注意：此字段可能返回 null，表示取不到有效值。
- * @method void setText(string $Text) 设置文本
+ * @method void setSurgeryHistory(SurgeryHistory $SurgeryHistory) 设置手术史
 注意：此字段可能返回 null，表示取不到有效值。
  */
-class Summary extends AbstractModel
+class Surgery extends AbstractModel
 {
     /**
-     * @var array 症状
+     * @var SurgeryHistory 手术史
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Symptom;
+    public $SurgeryHistory;
 
     /**
-     * @var string 文本
-注意：此字段可能返回 null，表示取不到有效值。
-     */
-    public $Text;
-
-    /**
-     * @param array $Symptom 症状
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $Text 文本
+     * @param SurgeryHistory $SurgeryHistory 手术史
 注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
@@ -62,17 +50,9 @@ class Summary extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Symptom",$param) and $param["Symptom"] !== null) {
-            $this->Symptom = [];
-            foreach ($param["Symptom"] as $key => $value){
-                $obj = new SymptomInfo();
-                $obj->deserialize($value);
-                array_push($this->Symptom, $obj);
-            }
-        }
-
-        if (array_key_exists("Text",$param) and $param["Text"] !== null) {
-            $this->Text = $param["Text"];
+        if (array_key_exists("SurgeryHistory",$param) and $param["SurgeryHistory"] !== null) {
+            $this->SurgeryHistory = new SurgeryHistory();
+            $this->SurgeryHistory->deserialize($param["SurgeryHistory"]);
         }
     }
 }

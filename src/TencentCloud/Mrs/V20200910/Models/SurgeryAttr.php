@@ -18,47 +18,35 @@ namespace TencentCloud\Mrs\V20200910\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 组织学等级
+ * 手术记录属性
  *
- * @method string getGrade() 获取等级
+ * @method string getName() 获取名称
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setGrade(string $Grade) 设置等级
+ * @method void setName(string $Name) 设置名称
 注意：此字段可能返回 null，表示取不到有效值。
- * @method array getIndex() 获取原文位置
+ * @method string getValue() 获取值
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setIndex(array $Index) 设置原文位置
-注意：此字段可能返回 null，表示取不到有效值。
- * @method string getSrc() 获取原文
-注意：此字段可能返回 null，表示取不到有效值。
- * @method void setSrc(string $Src) 设置原文
+ * @method void setValue(string $Value) 设置值
 注意：此字段可能返回 null，表示取不到有效值。
  */
-class HistologyLevel extends AbstractModel
+class SurgeryAttr extends AbstractModel
 {
     /**
-     * @var string 等级
+     * @var string 名称
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Grade;
+    public $Name;
 
     /**
-     * @var array 原文位置
+     * @var string 值
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Index;
+    public $Value;
 
     /**
-     * @var string 原文
+     * @param string $Name 名称
 注意：此字段可能返回 null，表示取不到有效值。
-     */
-    public $Src;
-
-    /**
-     * @param string $Grade 等级
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param array $Index 原文位置
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $Src 原文
+     * @param string $Value 值
 注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
@@ -74,16 +62,12 @@ class HistologyLevel extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Grade",$param) and $param["Grade"] !== null) {
-            $this->Grade = $param["Grade"];
+        if (array_key_exists("Name",$param) and $param["Name"] !== null) {
+            $this->Name = $param["Name"];
         }
 
-        if (array_key_exists("Index",$param) and $param["Index"] !== null) {
-            $this->Index = $param["Index"];
-        }
-
-        if (array_key_exists("Src",$param) and $param["Src"] !== null) {
-            $this->Src = $param["Src"];
+        if (array_key_exists("Value",$param) and $param["Value"] !== null) {
+            $this->Value = $param["Value"];
         }
     }
 }
