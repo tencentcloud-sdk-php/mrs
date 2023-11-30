@@ -28,12 +28,17 @@ use TencentCloud\Common\AbstractModel;
 注意：此字段可能返回 null，表示取不到有效值。
  * @method void setVersion(string $Version) 设置版本号
 注意：此字段可能返回 null，表示取不到有效值。
+ * @method array getTableIndicators() 获取检验报告V3结论
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setTableIndicators(array $TableIndicators) 设置检验报告V3结论
+注意：此字段可能返回 null，表示取不到有效值。
  */
 class IndicatorV3 extends AbstractModel
 {
     /**
      * @var array 检验报告V3结论
 注意：此字段可能返回 null，表示取不到有效值。
+     * @deprecated
      */
     public $TableIndictors;
 
@@ -44,9 +49,17 @@ class IndicatorV3 extends AbstractModel
     public $Version;
 
     /**
+     * @var array 检验报告V3结论
+注意：此字段可能返回 null，表示取不到有效值。
+     */
+    public $TableIndicators;
+
+    /**
      * @param array $TableIndictors 检验报告V3结论
 注意：此字段可能返回 null，表示取不到有效值。
      * @param string $Version 版本号
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param array $TableIndicators 检验报告V3结论
 注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
@@ -73,6 +86,15 @@ class IndicatorV3 extends AbstractModel
 
         if (array_key_exists("Version",$param) and $param["Version"] !== null) {
             $this->Version = $param["Version"];
+        }
+
+        if (array_key_exists("TableIndicators",$param) and $param["TableIndicators"] !== null) {
+            $this->TableIndicators = [];
+            foreach ($param["TableIndicators"] as $key => $value){
+                $obj = new TableIndicators();
+                $obj->deserialize($value);
+                array_push($this->TableIndicators, $obj);
+            }
         }
     }
 }
